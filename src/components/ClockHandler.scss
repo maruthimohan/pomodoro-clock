@@ -1,0 +1,33 @@
+// Component level CSS Variables
+$timer-color: rgb(8, 104, 148);
+
+.clock-panel {
+    position: relative;
+    width: 400px;
+    height: 135px;
+    margin: auto;
+    padding-bottom: 20px;
+    font-family: 'Roboto';
+
+    .session-panel {
+        height: 85px;
+
+        .session {
+            font-size: 20px;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .time-left {
+            font-size: 50px;
+            font-weight: 400;
+            text-align: center;
+            color: $timer-color;
+        }
+    }
+
+    .clock-button-group {
+        height: 50px;
+        text-align: center;
+    }
+}

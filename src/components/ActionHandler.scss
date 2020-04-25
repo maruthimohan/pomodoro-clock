@@ -1,0 +1,40 @@
+// Component level CSS variables
+$font-color: rgb(8, 104, 148);
+$secondary-color: rgb(0, 148, 255);
+
+
+.action-panel {
+    position: relative;
+    width: 250px;
+    padding: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+    font-weight: 700;
+    color: $font-color;
+
+    .action-header {
+        font-weight: bold;
+        text-align: center;
+        padding: 5px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .action-button-group {
+        text-align: center;
+
+        .action-count  {
+            display: inline-block;
+            padding: 0px 10px;
+            font-size: 22px;
+            line-height: 48px;
+            vertical-align: middle;
+        }
+
+        .action-button {
+            font-weight: 700;
+            color: $font-color;
+        }
+    }
+}

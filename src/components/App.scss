@@ -1,0 +1,27 @@
+// Component level CSS Variables
+$app-background: rgb(0, 62, 90);
+$app-header-color: rgb(0, 148, 255);
+
+.App {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto';
+    background-color: $app-background;
+
+    .app-card {
+        position: relative;
+        width: 500px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: $app-header-color;
+
+        .app-header {
+            text-align: center;
+            font-weight: 300;
+            font-size: 34px;
+            padding-top: 20px;
+        }
+    }
+}
