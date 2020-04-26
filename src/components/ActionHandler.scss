@@ -1,7 +1,8 @@
 // Component level CSS variables
 $font-color: rgb(8, 104, 148);
 $secondary-color: rgb(0, 148, 255);
-
+$app-header-secondary-color: rgb(116, 116, 116);
+$red-border: rgb(207, 0, 0);
 
 .action-panel {
     position: relative;
@@ -14,11 +15,11 @@ $secondary-color: rgb(0, 148, 255);
     color: $font-color;
 
     .action-header {
-        font-weight: bold;
         text-align: center;
         padding: 5px;
         font-size: 20px;
-        font-weight: 700;
+        font-weight: 300;
+        color: $app-header-secondary-color;
     }
 
     .action-button-group {
@@ -29,12 +30,17 @@ $secondary-color: rgb(0, 148, 255);
             padding: 0px 10px;
             font-size: 22px;
             line-height: 48px;
+            width: 48px;
             vertical-align: middle;
+            // margin: 0 5px;
+            // background-color: rgb(234, 234, 234);
+            // border: 1px solid $app-header-secondary-color;
+            // border-radius: 5px;
         }
 
         .action-button {
             font-weight: 700;
-            color: $font-color;
+            // color: $font-color;
         }
     }
 }

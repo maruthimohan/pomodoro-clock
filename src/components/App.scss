@@ -1,6 +1,7 @@
 // Component level CSS Variables
 $app-background: rgb(0, 62, 90);
 $app-header-color: rgb(0, 148, 255);
+$app-header-secondary-color: rgb(116, 116, 116);
 
 .App {
     position: absolute;
@@ -15,13 +16,19 @@ $app-header-color: rgb(0, 148, 255);
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        color: $app-header-color;
-
+        color: $app-header-secondary-color;
+        
         .app-header {
             text-align: center;
             font-weight: 300;
             font-size: 34px;
-            padding-top: 20px;
+            border: 1px solid $app-header-secondary-color;
+            border-radius: 5px;
+            width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            
         }
     }
 }

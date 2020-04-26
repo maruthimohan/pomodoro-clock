@@ -1,16 +1,24 @@
 // Component level CSS Variables
 $timer-color: rgb(8, 104, 148);
+$primary-color: rgb(0, 148, 255);
+$timer-border-color: rgb(0, 255, 102);
 
 .clock-panel {
     position: relative;
     width: 400px;
-    height: 135px;
+    height: 150px;
     margin: auto;
     padding-bottom: 20px;
     font-family: 'Roboto';
 
     .session-panel {
-        height: 85px;
+        height: 100px;
+        width: 150px;
+        padding: 10px;
+        box-sizing: border-box;
+        margin: auto;
+        border: 1px solid $timer-border-color;
+        border-radius: 10px;
 
         .session {
             font-size: 20px;

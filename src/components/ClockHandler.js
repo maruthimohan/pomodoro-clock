@@ -16,12 +16,21 @@ const formatTime = (currentTime) => {
     return `${minutes}:${seconds}`;
 }
 
+const breakBorder = {
+    border: '1px solid red'
+};
+
 export default function ClockHandler(props) {
+    // Break styles
+    const breakStyle = !props.isSession ? breakBorder : {};
+
     return (
         <div className="clock-panel">
-            <div className="session-panel">
+            <div className="session-panel" style={breakStyle}>
                 <div className="session" id="timer-label">
-                    SESSION
+                    {
+                        props.isSession ? 'SESSION' : 'BREAK'
+                    }
                 </div>
                 <div className="time-left" id="time-left">
                     {formatTime(props.timeRemaining)}

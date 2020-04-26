@@ -3,7 +3,8 @@ import './ActionHandler.scss';
 import { 
     Card, 
     Button,
-    IconButton
+    IconButton,
+    Tooltip
  } from '@material-ui/core';
  import {
     ArrowUpwardRounded,
@@ -11,6 +12,25 @@ import {
  } from '@material-ui/icons';
 
 export default function ActionHandler(props) {
+    const disabledDecrementButton = (
+        <Tooltip title="Session in progress!, pause the Session to change." arrow>
+            <span>
+                <IconButton disabled>
+                    <ArrowUpwardRounded />
+                </IconButton>
+            </span>
+        </Tooltip>
+    );
+    
+    const disabledIncrementButton = (
+        <Tooltip title="Session in progress!, pause the Session to change." arrow>
+            <span>
+                <IconButton disabled>
+                    <ArrowDownwardRounded />
+                </IconButton>
+            </span>
+        </Tooltip>
+    );
 
     return (
         <div className="action-panel">
@@ -18,26 +38,36 @@ export default function ActionHandler(props) {
                 {props.header}
             </div>
             <div className="action-button-group">
-                <IconButton 
-                    className="action-button" 
-                    id={props.incrementId}
-                    onClick={(e) => props.handleAction('INCREMENT', e)}
-                >
-                    <ArrowUpwardRounded />
-                </IconButton>
+                {
+                    props.isClockPaused ?
+                    (
+                        <IconButton 
+                            className="action-button" 
+                            id={props.incrementId}
+                            onClick={(e) => props.handleAction('INCREMENT', e)}
+                        >
+                            <ArrowUpwardRounded />
+                        </IconButton>
+                    ) : disabledDecrementButton
+                }
                 <div 
                     className="action-count" 
                     id={props.counterId}
                 >
                     {props.counter}
                 </div>
-                <IconButton 
-                    className="action-button" 
-                    id={props.decrementId} 
-                    onClick={(e) => props.handleAction('DECREMENT', e)}
-                >
-                    <ArrowDownwardRounded/>
-                </IconButton>
+                {
+                    props.isClockPaused ?
+                    (
+                        <IconButton 
+                            className="action-button" 
+                            id={props.decrementId} 
+                            onClick={(e) => props.handleAction('DECREMENT', e)}
+                        >
+                            <ArrowDownwardRounded/>
+                        </IconButton>
+                    ) : disabledIncrementButton
+                }
             </div>
         </div>
     );
